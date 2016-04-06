@@ -876,3 +876,10 @@ a#cancel-comment-reply-link{
 	font-weight: bold;
 	text-align: center;
 }
+
+
+/* Custom Styling - Sahil */
+
+body {
+	background: url('../images/hearts.png')
+}
