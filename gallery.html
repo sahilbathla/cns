@@ -175,6 +175,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </ul>
 
     </div>
+    <button id="reverseHint" style="font-size:12px; width:100%; background-color: #2769A7; position: fixed; bottom: 0; color: white; padding: 2%;" onclick="hideHint()">Tip: Tap On The Card To Read The Message<br>Tap on Me to remove this tip</button>
    </div>
     <footer>
 
@@ -236,6 +237,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         handler.wookmark(options);
       });
     })(jQuery);
+
+    function hideHint() {
+      $('#reverseHint').hide();
+    }
 
     window.onload = function() {
       $('.main-image').each(function() {

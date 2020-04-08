@@ -1,8 +1,27 @@
 (function( $ ) {
+  $(document).ready(function () {
+    setTimeout(function () {
+      $(".front").css({
+        transform: "rotatey(180deg)"
+      });
+    }, 500);
+
+    setTimeout(function () {
+      $(".front").css({
+        transform: "rotatey(0deg)"
+      });
+    }, 1000);
+  });
+
   var flip = function($dom) {
     $dom.data("fliped", true);
 
     var rotateAxis = "rotate" + $dom.data("axis");
+
+    $(".front").css({
+      transform: rotateAxis + "(0deg)"
+    });
+
     $dom.find(".front").css({
       transform: rotateAxis + ($dom.data("reverse") ? "(-180deg)" : "(180deg)")
     });
@@ -42,7 +61,7 @@
           trigger: "click",
           speed: 500
         }, options );
-        
+
         // save reverse and axis css to DOM for performing flip
         $dom.data("reverse", settings.reverse);
         $dom.data("axis", settings.axis);
@@ -114,5 +133,5 @@
 
     return this;
   };
- 
+
 }( jQuery ));
